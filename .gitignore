@@ -1,6 +1,6 @@
 # Build artifacts
 *.html
-!deploy/*.html
+# !deploy/*.html
 *.pdf
 
 # Temporary files

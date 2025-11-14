@@ -7,12 +7,10 @@
 
 = Welcome to Feed
 
-This is a production-ready Typst project compiled to HTML using Typst 0.14's experimental HTML features.
+This is a Typst project compiled to HTML using Typst 0.14's experimental HTML features.
 
 == Features
 
-- Well-organized project structure
-- Reusable templates
 - GitHub Pages deployment
 - Automatic compilation via GitHub Actions
 
@@ -40,13 +38,3 @@ This is an example of how content can be structured in Typst. You can use:
 - _Italic text_
 - `Code snippets`
 - #link("https://example.com")[Links]
-
-== Maintenance
-
-To update the site:
-
-1. Edit files in the `typst/` directory
-2. Commit and push changes
-3. GitHub Actions will automatically compile and deploy
-
-The compilation uses the experimental `--features html` flag available in Typst 0.14.
