@@ -38,3 +38,9 @@ This is an example of how content can be structured in Typst. You can use:
 - _Italic text_
 - `Code snippets`
 - #link("https://example.com")[Links]
+- #html.video(
+    autoplay: true,
+    width: 320,
+    height: 180,
+    src: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+  )

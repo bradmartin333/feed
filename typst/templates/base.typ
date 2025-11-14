@@ -25,15 +25,11 @@
   
   // Title block
   if title != none {
-    align(center)[
-      #text(size: 24pt, weight: "bold")[#title]
-    ]
+    text(size: 24pt, weight: "bold")[#title]
   }
   
   if author != none {
-    align(center)[
-      #text(size: 12pt)[#author]
-    ]
+    text(size: 12pt)[#author]
   }
   
   // Document body
