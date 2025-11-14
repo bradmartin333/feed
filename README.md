@@ -1,13 +1,13 @@
 # Feed
 
-A GitLab Pages site powered by Typst, compiled to HTML using Typst 0.14's experimental HTML features.
+A GitHub Pages site powered by Typst, compiled to HTML using Typst 0.14's experimental HTML features.
 
 ## Getting Started
 
 ### Prerequisites
 
 - Typst 0.14 or later (with HTML feature support)
-- GitLab repository with Pages enabled
+- GitHub repository with Pages enabled
 
 ### Quick Start
 

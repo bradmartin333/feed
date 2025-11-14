@@ -13,12 +13,12 @@ This is a production-ready Typst project compiled to HTML using Typst 0.14's exp
 
 - Well-organized project structure
 - Reusable templates
-- GitLab Pages deployment
-- Automatic compilation via CI/CD
+- GitHub Pages deployment
+- Automatic compilation via GitHub Actions
 
 == Getting Started
 
-This document is automatically compiled from the `typst/` directory structure and deployed to GitLab Pages.
+This document is automatically compiled from the `typst/` directory structure and deployed to GitHub Pages.
 
 === Project Structure
 
@@ -26,7 +26,7 @@ The project follows a maintainable structure:
 
 - `typst/main.typ` - Main document source
 - `typst/templates/` - Reusable templates
-- `.gitlab-ci.yml` - CI/CD configuration for automatic deployment
+- `.github/workflows/pages.yml` - GitHub Actions workflow for automatic deployment
 
 == Content Management
 
@@ -47,6 +47,6 @@ To update the site:
 
 1. Edit files in the `typst/` directory
 2. Commit and push changes
-3. GitLab CI will automatically compile and deploy
+3. GitHub Actions will automatically compile and deploy
 
 The compilation uses the experimental `--features html` flag available in Typst 0.14.
