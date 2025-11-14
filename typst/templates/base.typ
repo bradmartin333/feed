@@ -12,18 +12,6 @@
     author: author,
   )
   
-  // Configure text properties
-  set text(
-    size: 11pt,
-    font: "Linux Libertine",
-  )
-  
-  // Configure page properties
-  set page(
-    paper: "a4",
-    margin: (x: 2cm, y: 2cm),
-  )
-  
   // Configure paragraphs
   set par(
     justify: true,
@@ -46,10 +34,6 @@
     align(center)[
       #text(size: 12pt)[#author]
     ]
-  }
-  
-  if title != none or author != none {
-    v(1em)
   }
   
   // Document body
