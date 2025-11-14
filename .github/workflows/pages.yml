@@ -6,6 +6,7 @@ on:
       - main
   workflow_dispatch:
 
+# Sets permissions to allow pushing to gh-pages branch
 permissions:
   contents: write
 
@@ -21,18 +22,17 @@ jobs:
         with:
           typst-version: '0.14.0'
 
+      - name: Create deployment directory
+        run: mkdir -p deploy
+
       - name: Compile Typst to HTML
         run: |
           typst compile --features html typst/main.typ deploy/index.html
           typst compile --features html typst/examples/simple.typ deploy/example.html --root typst
 
-      - name: Deploy to gh-pages branch
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git checkout --orphan gh-pages
-          git rm -rf .
-          git checkout main -- deploy/index.html deploy/example.html
-          git add deploy/index.html deploy/example.html
-          git commit -m "Deploy to GitHub Pages"
-          git push -f origin gh-pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./deploy
+          publish_branch: gh-pages
