@@ -1,0 +1,12 @@
+# Build artifacts
+index.html
+*.pdf
+
+# Temporary files
+*.tmp
+*.swp
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
