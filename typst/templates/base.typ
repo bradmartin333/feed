@@ -28,10 +28,6 @@
     text(size: 24pt, weight: "bold")[#title]
   }
   
-  if author != none {
-    text(size: 12pt)[#author]
-  }
-  
   // Document body
   body
 }
