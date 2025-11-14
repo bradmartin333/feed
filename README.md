@@ -6,6 +6,12 @@ A production-ready GitLab Pages site powered by Typst, compiled to HTML using Ty
 
 This repository contains a well-organized Typst project that compiles to a static HTML site hosted on GitLab Pages. The project structure is designed for maintainability and scalability.
 
+## Documentation
+
+- **[README.md](README.md)** - This file, provides overview and quick start
+- **[VALIDATION.md](VALIDATION.md)** - Validation guide and troubleshooting
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Contributing guidelines and development workflow
+
 ## Project Structure
 
 ```
@@ -13,10 +19,15 @@ This repository contains a well-organized Typst project that compiles to a stati
 ├── .gitlab-ci.yml          # GitLab CI/CD configuration
 ├── .gitignore              # Ignore build artifacts
 ├── README.md               # This file
+├── VALIDATION.md           # Validation guide
+├── CONTRIBUTING.md         # Contributing guide
+├── validate.sh             # Validation script
 └── typst/                  # Typst project directory
     ├── main.typ            # Main document source
-    └── templates/          # Reusable templates
-        └── base.typ        # Base template for HTML output
+    ├── templates/          # Reusable templates
+    │   └── base.typ        # Base template for HTML output
+    └── examples/           # Example documents
+        └── simple.typ      # Simple example
 ```
 
 ## Features
@@ -34,17 +45,23 @@ This repository contains a well-organized Typst project that compiles to a stati
 - Typst 0.14 or later (with HTML feature support)
 - GitLab repository with Pages enabled
 
-### Local Development
+### Quick Start
 
-To compile the document locally:
+1. **Install Typst 0.14+**: See [typst.app](https://typst.app) for installation instructions
 
-```bash
-# Install Typst 0.14 or later
-# See https://github.com/typst/typst for installation instructions
+2. **Clone and validate**:
+   ```bash
+   git clone <repository-url>
+   cd feed
+   ./validate.sh
+   ```
 
-# Compile to HTML
-typst compile --features html typst/main.typ index.html
-```
+3. **Compile locally**:
+   ```bash
+   typst compile --features html typst/main.typ index.html
+   ```
+
+4. **View the output**: Open `index.html` in your browser
 
 ### Editing Content
 
