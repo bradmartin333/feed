@@ -22,14 +22,17 @@ jobs:
         with:
           typst-version: '0.14.0'
 
+      - name: Create deployment directory
+        run: mkdir -p deploy
+
       - name: Compile Typst to HTML
         run: |
-          typst compile --features html typst/main.typ index.html
-          typst compile --features html typst/examples/simple.typ example.html --root typst
+          typst compile --features html typst/main.typ deploy/index.html
+          typst compile --features html typst/examples/simple.typ deploy/example.html --root typst
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .
+          publish_dir: ./deploy
           publish_branch: gh-pages
