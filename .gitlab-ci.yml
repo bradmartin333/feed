@@ -1,0 +1,40 @@
+image: ghcr.io/typst/typst:0.14.0
+
+# GitLab Pages configuration
+pages:
+  stage: deploy
+  script:
+    # Compile the Typst document to HTML using experimental HTML features
+    - typst compile --features html typst/main.typ index.html
+    
+    # Create public directory for GitLab Pages
+    - mkdir -p public
+    
+    # Move the generated HTML to the public directory
+    - mv index.html public/index.html
+    
+    # Display build info
+    - echo "Successfully compiled Typst document to HTML"
+    - ls -lah public/
+  
+  artifacts:
+    paths:
+      # GitLab Pages serves content from the public directory
+      - public
+  
+  # Only deploy on main branch
+  only:
+    - main
+    - master
+
+# Optional: Add a job to check compilation on all branches
+check:
+  stage: test
+  script:
+    - typst compile --features html typst/main.typ index.html
+    - echo "Compilation check passed"
+  
+  # Run on all branches except main/master
+  except:
+    - main
+    - master
